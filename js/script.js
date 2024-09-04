@@ -40,6 +40,9 @@ createApp({
         },
         nextImage() {
             this.activeIndex = (this.activeIndex === this.listImages.length - 1) ? 0 : this.activeIndex + 1;
+        },
+        currentThumb(index) {
+            this.activeIndex = index;
         }
     }
 }).mount('#app')

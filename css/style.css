@@ -1,5 +1,6 @@
 .img-thumbnails {
     height: calc(800px / 5);
+    cursor: pointer;
 }
 
 .img-carousel {

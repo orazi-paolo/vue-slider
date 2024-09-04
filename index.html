@@ -39,7 +39,8 @@
                 <div class="col-4 d-flex flex-column">
                     <div class="d-flex flex-column">
                         <img :src="image.image" class="img-thumbnails" :alt="image.title"
-                            v-for='(image, index) in listImages'>
+                            v-for='(image, index) in listImages' :key="index"
+                            :class="{ 'active': index === activeIndex }" @click="currentThumb(index)">
                     </div>
                     <div class="next" @click="prevImage()"><i class="fa-solid fa-arrow-up fa-2xl"></i></div>
                     <div class="prev" @click="nextImage()"><i class="fa-solid fa-arrow-down fa-2xl"></i></div>
