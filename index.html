@@ -31,10 +31,14 @@
                 </div>
             </div>
         </header>
+        <!-- se il mouse è dentro stoppo l autoplay altrimenti lo eseguo -->
         <main class="container" @mouseenter="stopAutoPlay" @mouseleave="autoPlay">
             <div class="row">
                 <div class="col-8 relative">
-                    <img :src="listImages[activeIndex].image" class="img-fluid img-carousel" alt="Spiderman">
+                    <!-- inserisco le immagini in maniera dinamica -->
+                    <img :src="listImages[activeIndex].image" class="img-fluid img-carousel"
+                        :alt="listImages[activeIndex].title">
+                    <!-- inserisco il titolo e la descrizione dell'immagine in maniera dinamica -->
                     <div class="descriptionCarousel">
                         <h2 class="text-white">{{ listImages[activeIndex].title }}</h2>
                         <p class="text-white">{{ listImages[activeIndex].text}}</p>
@@ -42,10 +46,14 @@
                 </div>
                 <div class="col-4 d-flex flex-column">
                     <div class="d-flex flex-column">
+                        <!-- mi avvalgo di un ciclo for per inserire tutte le miniature -->
+                        <!-- poi mi avvalgo di una chiave(index) per inserire la classe active all immagine corrente -->
+                        <!-- al click su una miniatura cambio l index corrente -->
                         <img :src="image.image" class="img-thumbnails" :alt="image.title"
                             v-for='(image, index) in listImages' :key="index"
                             :class="{ 'active': index === activeIndex }" @click="currentThumb(index)">
                     </div>
+                    <!-- aggiungo bottoni per cambiare l immagine tramite due funzioni -->
                     <div class="next" @click="prevImage()"><i class="fa-solid fa-arrow-up fa-2xl"></i></div>
                     <div class="prev" @click="nextImage()"><i class="fa-solid fa-arrow-down fa-2xl"></i></div>
                 </div>
