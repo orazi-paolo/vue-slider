@@ -32,6 +32,7 @@ createApp({
             ],
             activeIndex: 0,
             class: 'active',
+            autoPlayInterval: null,
         }
     },
     methods: {
@@ -43,6 +44,18 @@ createApp({
         },
         currentThumb(index) {
             this.activeIndex = index;
-        }
-    }
+        },
+        autoPlay() {
+            if (!this.autoPlayInterval) {
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextImage();
+                }, 3000);
+            }
+        },
+        stopAutoPlay() {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        },
+    },
+
 }).mount('#app')

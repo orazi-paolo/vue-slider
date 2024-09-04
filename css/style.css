@@ -6,6 +6,7 @@
 .img-carousel {
     height: 800px;
     width: 100%;
+    object-fit: cover;
 }
 
 .fa-solid {
@@ -35,4 +36,15 @@
 
 .active {
     border: 10px solid grey;
+}
+
+
+.relative {
+    position: relative;
+}
+
+.descriptionCarousel {
+    position: absolute;
+    bottom: 10px;
+    left: 300px;
 }

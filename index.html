@@ -31,10 +31,14 @@
                 </div>
             </div>
         </header>
-        <main class="container">
+        <main class="container" @mouseenter="stopAutoPlay" @mouseleave="autoPlay">
             <div class="row">
-                <div class="col-8">
+                <div class="col-8 relative">
                     <img :src="listImages[activeIndex].image" class="img-fluid img-carousel" alt="Spiderman">
+                    <div class="descriptionCarousel">
+                        <h2 class="text-white">{{ listImages[activeIndex].title }}</h2>
+                        <p class="text-white">{{ listImages[activeIndex].text}}</p>
+                    </div>
                 </div>
                 <div class="col-4 d-flex flex-column">
                     <div class="d-flex flex-column">
