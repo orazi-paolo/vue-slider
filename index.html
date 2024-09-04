@@ -34,14 +34,15 @@
         <main class="container">
             <div class="row">
                 <div class="col-8">
-                    <img src="img/01.webp" class="img-fluid img-carousel" alt="Spiderman">
+                    <img :src="listImages[activeIndex].image" class="img-fluid img-carousel" alt="Spiderman">
                 </div>
                 <div class="col-4 d-flex flex-column">
-                    <div class="d-flex flex-column" v-for='(image, index) in listImages'>
-                        <img :src="image.image" class="img-thumbnails" alt="">
+                    <div class="d-flex flex-column">
+                        <img :src="image.image" class="img-thumbnails" :alt="image.title"
+                            v-for='(image, index) in listImages'>
                     </div>
-                    <div class="next"><i class="fa-solid fa-arrow-up fa-2xl"></i></div>
-                    <div class="prev"><i class="fa-solid fa-arrow-down fa-2xl"></i></div>
+                    <div class="next" @click="prevImage()"><i class="fa-solid fa-arrow-up fa-2xl"></i></div>
+                    <div class="prev" @click="nextImage()"><i class="fa-solid fa-arrow-down fa-2xl"></i></div>
                 </div>
             </div>
 

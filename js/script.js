@@ -30,6 +30,16 @@ createApp({
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 },
             ],
+            activeIndex: 0,
+            class: 'active',
+        }
+    },
+    methods: {
+        prevImage() {
+            this.activeIndex = (this.activeIndex === 0) ? this.listImages.length - 1 : this.activeIndex - 1;
+        },
+        nextImage() {
+            this.activeIndex = (this.activeIndex === this.listImages.length - 1) ? 0 : this.activeIndex + 1;
         }
     }
 }).mount('#app')
